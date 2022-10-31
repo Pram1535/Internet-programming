@@ -1,0 +1,99 @@
+
+write a script that inputs telephone number as a string the script should use string method to splitch area code
+as a token 3digits of phone number as a token and 4digits
+
+
+program:-
+
+<html>
+
+<head><title> Splitting number</title>
+
+<script type = "text/javascript">
+
+function parseNumber() {
+
+var myForm = document.getElementById( "myForm" );
+
+myForm.areaCode.value = "";
+
+myForm.number.value = "";
+
+var completeNumber = myForm.input.value;
+
+var tokens = completeNumber.split( " " );
+
+var areaCode = tokens[ 0 ];
+
+var tokens2 = tokens[ 1 ].split( "-" );
+
+var exchange = tokens2[ 0 ];
+
+var number = tokens2[ 1 ];
+
+areaCode = areaCode.substr( 1, 3 );
+
+myForm.areaCode.value = areaCode;
+
+myForm.number.value = exchange + "-" + number;
+
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+<form id = "myForm" action = "">
+
+<table border = "1">
+
+<tr>
+
+<td>Enter a phone number <br /> [in the form (555) 555-5555]
+
+</td>
+
+<td>
+
+<input name = "input" type = "text" size = "40" />
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<input type = "button" value = "Split"
+
+onclick = "parseNumber()" /> </td>
+
+</tr> <tr>
+
+<td>Area code:</td> <td>
+
+<input name = "areaCode" type = "text" size= "5" />
+
+</td>
+
+</tr> <tr>
+
+<td>Number:</td> <td>
+
+<input name = "number" type = "text" size = "8" />
+
+</td>
+
+</tr>
+
+</table>
+
+</form>
+
+</body>
+
+</html>
