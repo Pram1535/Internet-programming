@@ -1,0 +1,95 @@
+1)Write A Java Script That Calculates The Squares And Cubes Of The Numbers From 0 To 10 And Outputs XHTML Text That Displays The Resulting Values In An XHTML Table Format, As Follows: Number Square Cube 
+
+0 0 0 
+1 1 1 
+2 4 8 
+3 9 27 
+4 16 64 
+5 25 125 
+6 36 216 
+7 49 343 
+8 64 512 
+9 81 729 
+10 100 1000 
+
+Copy Code From Here:
+
+
+
+<html>
+<head> 
+<script> 
+document.write( "<table> <tr> <th>Number</th> <th>Square</th> <th>Cube</th> </tr>" ) 
+for(var n=0; n<=10; n++) 
+{ 
+document.write( "<tr><td>" + n + "</td><td>" + n*n + "</td><td>" + n*n*n + "</td></tr>" ) 
+} 
+document.write( "</table>" ) 
+</script> 
+</head> 
+</html>
+
+
+
+
+2)
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8">
+<title>
+</title>
+<script>
+    var accountActivity = [];
+
+
+function checkBalance()
+
+{
+
+alert('hello, welcome to departmental store.please click okay to continue');
+
+var firstName = prompt('what is your first name?');
+var lastName = prompt('what is your last name?');
+var fullName = firstName + " " + lastName;
+
+
+alert('Hello ' + fullName + '. Please enter the charges and refunds for your shopping this month, please click okay to continue');
+
+var count = 0;
+var total = 100;
+while(count<total)
+{
+	var charge = prompt('please enter charge');
+	var cost = parseInt(charge, 10);
+	accountActivity.push(cost);
+
+	var credit = -prompt('please enter refund');
+	var refund = parseInt(credit, 10);
+	accountActivity.push(refund);	
+	count = (count + cost) - refund;
+	document.write(count);
+
+
+if(count >total)
+
+alert(fullName + ' you are spending too much!');
+document.getElementById('charges').innerHTML = "<li>" + accountActivity.join("</li><li>") + "</li>";
+}
+
+
+}
+</script>
+</head>
+
+<body onLoad="checkBalance()">
+<p>Your purchase amounts</p>
+<ol id="charges">
+</ol>
+<br>
+<!-- <p>Your refund amounts</p>
+<ol id="refunds">
+</ol> -->
+</body>
+</html>
